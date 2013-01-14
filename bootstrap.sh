@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-endpath="$HOME/.spf13-vim-3"
+endpath="$HOME/.dmm-spf13-vim-3"
 
 warn() {
     echo "$1" >&2
@@ -20,7 +20,7 @@ lnif() {
     fi
 }
 
-echo "Thanks for installing spf13-vim"
+echo "Now installing DMM's fork of spf13-vim-3"
 
 # Backup existing .vim stuff
 echo "backing up current vim config"
@@ -29,10 +29,10 @@ for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc; do [ -e $i ] && [ ! -L $i ] && m
 
 
 if [ ! -e $endpath/.git ]; then
-    echo "cloning spf13-vim"
-    git clone --recursive -b 3.0 http://github.com/spf13/spf13-vim.git $endpath
+    echo "cloning dmm-spf13-vim-3"
+    git clone --recursive https://github.com/davidmmiller/spf13-vim.git $endpath
 else
-    echo "updating spf13-vim"
+    echo "updating dmm-spf13-vim-3"
     cd $endpath && git pull
 fi
 
@@ -49,7 +49,10 @@ fi
 
 if [ ! -e $HOME/.vim/bundle/vundle ]; then
     echo "Installing Vundle"
-    git clone http://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+    git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+else
+    echo "Updating Vundle"
+    cd $HOME/.vim/bundle/vundle && git pull
 fi
 
 echo "update/install plugins using Vundle"
@@ -57,3 +60,4 @@ system_shell=$SHELL
 export SHELL="/bin/sh"
 vim -u $endpath/.vimrc.bundles +BundleInstall! +BundleClean +qall
 export SHELL=$system_shell
+

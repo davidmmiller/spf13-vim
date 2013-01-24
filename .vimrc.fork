@@ -2,9 +2,12 @@
 " vimrc file for this fork of spf13-vim
 " place vimrc directives here for all users of this fork
 " these directives override the base vimrc and can be overridden
-" but vimrc.local directives.
+" by vimrc.local directives.
 
 if has('statusline')                                                        
     let g:Powerline_symbols="fancy"
 endif
+
+" remove folding
+set nofoldenable
 

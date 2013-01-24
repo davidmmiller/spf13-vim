@@ -6,6 +6,7 @@
 " available groups are 'general', 'neocomplcache', 'programming',
 " 'php', 'ruby', 'python', 'javascript', 'html', 'misc', 'scala'
 "let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc', 'scala']
+let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'misc']
 
 " To override all the included bundles uncomment next line
 " g:override_spf13_bundles = 1

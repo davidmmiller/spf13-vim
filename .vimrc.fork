@@ -4,10 +4,6 @@
 " these directives override the base vimrc and can be overridden
 " by vimrc.local directives.
 
-if has('statusline')                                                        
-    let g:Powerline_symbols="fancy"
-endif
-
 " remove folding
 set nofoldenable
 

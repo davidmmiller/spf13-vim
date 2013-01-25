@@ -31,9 +31,11 @@ for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc; do [ -e $i ] && [ ! -L $i ] && m
 if [ ! -e $endpath/.git ]; then
     echo "cloning dmm-spf13-vim-3"
     git clone --recursive https://github.com/davidmmiller/spf13-vim.git $endpath
+    cp $endpath/.vimrc.local.sample $endpath/.vimrc.local
 else
     echo "updating dmm-spf13-vim-3"
     cd $endpath && git pull
+    echo "file .vimrc.local.sample may have been updated. diff with .vimrc.local to see."
 fi
 
 

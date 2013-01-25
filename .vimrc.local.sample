@@ -1,0 +1,9 @@
+" .vimrc.local
+" vimrc file for this machine
+" place vimrc directives here for this machine
+" these directives override the base vimrc and vimrc.fork directives
+
+if has('statusline')                                                        
+    let g:Powerline_symbols="fancy"
+endif
+

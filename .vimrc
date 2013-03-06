@@ -131,6 +131,9 @@
 
     set cursorline                  " Highlight current line
 
+    highlight clear SignColumn      " SignColumn should match background for
+                                    " things like vim-gitgutter
+
     if has('cmdline_info')
         set ruler                   " Show the ruler
         set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
@@ -389,10 +392,6 @@
         nmap <leader>ss :SessionSave<CR>
     " }
 
-    " Buffer explorer {
-        nmap <leader>b :BufExplorer<CR>
-    " }
-
     " JSON {
         nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
     " }
@@ -557,8 +556,10 @@
         set lines=40                " 40 lines of text instead of 24
         if has("gui_gtk2")
             set guifont=Andale\ Mono\ Regular\ 16,Menlo\ Regular\ 15,Consolas\ Regular\ 16,Courier\ New\ Regular\ 18
-        else
+        elseif has("gui_mac")
             set guifont=Andale\ Mono\ Regular:h16,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
+        elseif has("gui_win32")
+            set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
         endif
         if has('gui_macvim')
             set transparency=5      " Make the window slightly transparent

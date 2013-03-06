@@ -36,7 +36,7 @@ The goal has always been to add functionality without changing all the features,
 
 ## Linux, \*nix, Mac OSX Installation
 
-The easiest way to install DMM's fork of spf13-vim is to use our [automatic installer](http://j.mp/spf13-vim3) by simply copying and pasting the following line into a terminal. This will install spf13-vim and backup your existing vim configuration. If you are upgrading from a prior version (before 3.0) this is also the recommended installation.
+The easiest way to install DMM's fork of spf13-vim is to use our [automatic installer](https://raw.github.com/davidmmiller/spf13-vim/3.0/bootstrap.sh) by simply copying and pasting the following line into a terminal. This will install spf13-vim and backup your existing vim configuration. If you are upgrading from a prior version (before 3.0) this is also the recommended installation.
 
 ```bash
     

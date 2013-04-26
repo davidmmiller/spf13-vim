@@ -26,15 +26,16 @@ today=`date +%Y%m%d`
 for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc; do [ -e $i ] && [ ! -L $i ] && mv $i $i.$today; done
 
 endpath="$( cd "$( dirname "$0" )" && pwd)"
+branch="3.0"
 
 if [ ! -e $endpath/.git ]; then
     endpath="$HOME/.dmm-spf13-vim-3"
     echo "cloning dmm-spf13-vim-3"
-    git clone --recursive -b 3.0 http://github.com/davidmmiller/spf13-vim.git $endpath
+    git clone --recursive -b $branch http://github.com/davidmmiller/spf13-vim.git $endpath
     cp $endpath/.vimrc.local.sample $endpath/.vimrc.local
 else
     echo "updating dmm-spf13-vim-3"
-    cd $endpath && git pull
+    cd $endpath && git pull origin $branch
     echo "file .vimrc.local.sample may have been updated. diff with .vimrc.local to see."
 fi
 
